@@ -160,11 +160,11 @@
     const graphWidth = width - padding.left - padding.right;
     const graphHeight = height - padding.top - padding.bottom;
     
-    // Scale functions - inverted x-axis so latest data (newest time) is on the right
+    // Scale functions - newest data (highest time) is on the right
     const xScale = (time: number) => {
         if (temperatureData.length === 0) return 0;
         const maxTime = Math.max(temperatureData.length - 1, 59);
-        return graphWidth - (time / maxTime) * graphWidth;
+        return (time / maxTime) * graphWidth;
     };
     const yScale = (temp: number) => graphHeight - ((temp - 20) / 30) * graphHeight;
     
@@ -270,7 +270,7 @@
             {#each Array(7) as _, i}
                 {@const x = padding.left + (i / 6) * graphWidth}
                 {@const maxDataPoints = Math.max(temperatureData.length - 1, 59)}
-                {@const timeValue = Math.round(maxDataPoints - (i / 6) * maxDataPoints)}
+                {@const timeValue = Math.round((i / 6) * maxDataPoints)}
                 <line 
                     x1={x} 
                     y1={padding.top} 
