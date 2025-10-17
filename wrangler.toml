@@ -1,6 +1,8 @@
 name = "kkerti-dev"
+main = "./.svelte-kit/cloudflare/worker.js"
 compatibility_date = "2024-09-25"
 compatibility_flags = ["nodejs_compat"]
+assets = { binding = "ASSETS", directory = ".svelte-kit/cloudflare/assets" }
 
 [build]
 command = "npm run build"
