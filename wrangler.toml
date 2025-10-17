@@ -9,8 +9,8 @@ command = "npm run build"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "temperature-db"
-database_id = "local-db"
+database_name = "lab"
+database_id = "l1529c4df-f008-4a61-8efa-cb1debc25f62"
 
 [vars]
-NODE_ENV = "development"
+NODE_ENV = "production"
